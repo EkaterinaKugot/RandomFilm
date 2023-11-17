@@ -2,48 +2,53 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
-        android:textSize="30sp"
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/name" />
+        android:textSize="30sp" />
+
     <TextView
-        android:textSize="30sp"
+        android:id="@+id/year"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/year" />
+        android:textSize="30sp" />
+
     <TextView
-        android:textSize="30sp"
+        android:id="@+id/rating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rating" />
+        android:textSize="30sp" />
+
     <TextView
-        android:textSize="30sp"
+        android:id="@+id/age_limit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/age_limit" />
+        android:textSize="30sp" />
+
     <TextView
-        android:textSize="30sp"
+        android:id="@+id/duration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/duration" />
+        android:textSize="30sp" />
+
     <TextView
-        android:textSize="30sp"
+        android:id="@+id/genre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/genre" />
+        android:textSize="30sp" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/next"
         android:onClick="onNextClick"
-        android:textSize="30sp"
-        />
+        android:text="@string/next"
+        android:textSize="30sp" />
 
     <Button
         android:layout_width="match_parent"

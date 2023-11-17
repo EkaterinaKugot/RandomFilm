@@ -15,7 +15,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var movies : Array<String>;
+    lateinit var movies: Array<String>;
     lateinit var indexs: Array<Int>
     lateinit var movies_data: Movies
     private lateinit var tvName: TextView
@@ -25,16 +25,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvDuration: TextView
     private lateinit var tvGenre: TextView
 
-    override fun onStart() {
-        super.onStart()
-        Log.d("mytag", "onStart()" )
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("mytag", "onStop()")
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -42,12 +32,12 @@ class MainActivity : AppCompatActivity() {
         tvName = findViewById<TextView>(R.id.name)
         tvYear = findViewById<TextView>(R.id.year)
         tvRating = findViewById<TextView>(R.id.rating)
-        tvAgeLimit = findViewById<TextView>(R.id.age_limit )
+        tvAgeLimit = findViewById<TextView>(R.id.age_limit)
         tvDuration = findViewById<TextView>(R.id.duration)
         tvGenre = findViewById<TextView>(R.id.genre)
 
         movies = resources.getStringArray(R.array.movies)
-        indexs = Array(movies.size){-1}
+        indexs = Array(movies.size) { -1 }
         Log.d("mytag", movies[0])
         // открываем файл
         val movies_stream = resources.openRawResource(R.raw.movies)
@@ -60,14 +50,14 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     fun onNextClick(view: View) {
         var rndIndex = Random().nextInt(movies.size)
-        if (-1 !in indexs){
+        if (-1 !in indexs) {
             tvName.text = "Фильмы кончились"
             tvYear.text = ""
             tvRating.text = ""
             tvAgeLimit.text = ""
             tvDuration.text = ""
             tvGenre.text = ""
-        }else {
+        } else {
             while (rndIndex in indexs) {
                 rndIndex = Random().nextInt(movies.size)
             }
@@ -75,8 +65,8 @@ class MainActivity : AppCompatActivity() {
             tvName.text = "Name: " + movies[rndIndex]
 
             var idx: Int = 0
-            for (m in 0 until movies_data.movies.size){
-                if (movies_data.movies[m].name == movies[rndIndex]){
+            for (m in 0 until movies_data.movies.size) {
+                if (movies_data.movies[m].name == movies[rndIndex]) {
                     idx = m
                 }
             }
@@ -97,9 +87,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun onClearClick(view: View){
-        indexs = Array(movies.size){-1}
-        tvName.text= "Фильмы обновлены"
+    fun onClearClick(view: View) {
+        indexs = Array(movies.size) { -1 }
+        tvName.text = "Фильмы обновлены"
         tvYear.text = ""
         tvRating.text = ""
         tvAgeLimit.text = ""
